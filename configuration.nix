@@ -104,6 +104,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     kdePackages.dolphin
+    oh-my-zsh
     xwayland-satellite
     steam
     obsidian
@@ -157,7 +158,10 @@ services.openssh = {
     PerSourcePenalties = "crash:3600s authfail:3600s max:86400s";
   };
 };
-
+xdg.portal = {
+  enable = true;
+  extraPortals = pkgs.lib.mkForce [ pkgs.xdg-desktop-portal-gtk ];
+};
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
