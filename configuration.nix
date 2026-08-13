@@ -107,6 +107,7 @@
     kdePackages.dolphin
     oh-my-zsh
     zsh
+    starship
     xwayland-satellite
     steam
     obsidian
@@ -127,12 +128,17 @@
     noctalia-greeter 
     unzip
     mpv
+    mpd 
+    rmpc
     python3
     playerctl
     inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
     btop
    # wget
   ];
+fonts.packages = with pkgs; [
+  nerd-fonts.fira-code
+];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -147,6 +153,28 @@ services.power-profiles-daemon.enable = true;
 services.upower.enable = true;
 system.autoUpgrade.enable  = true;
 system.autoUpgrade.allowReboot  = true;
+services.mpd = {
+  enable = true;
+  settings = {
+    music_directory = "/home/shrek/Music";
+    audio_output = [
+      {
+        type = "alsa";
+        name = "Output";
+        format = "44100:16:2";
+        mixer_type = "hardware";
+        mixer_device = "default";
+        mixer_control = "PCM";
+      }
+      {
+        type = "fifo";
+        name = "Visualizer";
+        path = "/tmp/mpd.fifo";
+        format = "44100:16:2";
+      }
+    ];
+  };
+};
   # Enable the OpenSSH daemon.
 services.openssh = {
   enable = true;
