@@ -141,6 +141,7 @@
     firefox-bin
     obsidian
     keepassxc
+    openvpn
    # wget
   ];
 fonts.packages = with pkgs; [
