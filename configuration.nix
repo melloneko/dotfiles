@@ -14,7 +14,7 @@
   programs.noctalia-greeter = {
 	enable = true;
   };
-  programs.steam = { 
+  programs.steam = {
 	enable = true;
   };
   programs.niri.enable = true;
@@ -39,7 +39,7 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
-  hardware.bluetooth = { 
+  hardware.bluetooth = {
 	enable = true;
 	powerOnBoot = true;
 };
@@ -97,43 +97,50 @@
 
      theme = spicePkgs.themes.blossom;
     };
-     
-   
+
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    kdePackages.dolphin
-    oh-my-zsh
-    zsh
-    starship
-    xwayland-satellite
-    steam
-    obsidian
-    firefox-bin
-    keepassxc
-    ani-cli
-    zed-editor
-    vim
-    git
-    btop
-    prismlauncher
-    vesktop
-    greetd
-    fastfetch
+    # Terminal Tools :
     wezterm
+    btop
+    fastfetch
+    zsh
+    oh-my-zsh
+    starship
+    ani-cli
+    playerctl
+    unzip
+    # Greeter
+    greetd
+    noctalia-greeter
+    # Window Manager
     niri
     noctalia
-    noctalia-greeter 
-    unzip
-    mpv
-    mpd 
-    rmpc
-    python3
-    playerctl
     inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
-    btop
+    # Music
+    mpv
+    mpd
+    rmpc
+    # Gaming
+    prismlauncher
+    steam
+    vesktop
+    # Programmation
+    vim
+    zed-editor
+    git
+    python3
+    # Utilities
+    kdePackages.kdeconnect-kde
+    kdePackages.dolphin
+    xwayland-satellite
+    firefox-bin
+    obsidian
+    keepassxc
    # wget
   ];
 fonts.packages = with pkgs; [
