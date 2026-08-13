@@ -19,6 +19,7 @@
   };
   programs.niri.enable = true;
   programs.kdeconnect.enable = true;
+  programs.zsh.enable = true;
 
  # services.displayManager.gdm.enable = true;
  # services.displayManager.gdm.wayland = true;
@@ -77,7 +78,7 @@
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [];
   };
-
+  users.defaultUserShell = pkgs.zsh;
  programs.spicetify =  let
      # For Flakeless:
      # spicePkgs = spicetify-nix.packages;
@@ -105,6 +106,7 @@
   environment.systemPackages = with pkgs; [
     kdePackages.dolphin
     oh-my-zsh
+    zsh
     xwayland-satellite
     steam
     obsidian
