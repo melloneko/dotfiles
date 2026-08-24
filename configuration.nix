@@ -142,6 +142,7 @@
     obsidian
     keepassxc
     openvpn
+    syncthing
    # wget
   ];
 fonts.packages = with pkgs; [
