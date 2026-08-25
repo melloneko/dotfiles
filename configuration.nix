@@ -93,9 +93,12 @@
        shuffle # shuffle+ (special characters are sanitized out of extension names)
        beautifulLyrics
        oneko
+       songstats
+       spicyLyrics
+       availabilityMap
      ];
 
-     theme = spicePkgs.themes.blossom;
+     theme = spicePkgs.themes.matte;
     };
 
 
