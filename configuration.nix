@@ -41,9 +41,31 @@
   # Enable networking
   networking.networkmanager.enable = true;
   hardware.bluetooth = {
-	enable = true;
-	powerOnBoot = true;
-};
+    enable = true;
+    powerOnBoot = true;
+    settings = {
+      General = {
+        ControllerMode = "dual";
+        FastConnectable = true;
+        JustWorksRepairing = "confirm";
+      };
+      LE = {
+        MinConnectionInterval = 7;
+        MaxConnectionInterval = 9;
+        ConnectionLatency = 0;
+      };
+      Policy = {
+        AutoEnable = true;
+      };
+    };
+  };
+  boot = {
+      extraModulePackages = with config.boot.kernelPackages; [ xpadneo ];
+      extraModprobeConfig = ''
+      options bluetooth disable_ertm=Y
+    '';
+  };
+
 hardware.xpadneo.enable = true;
   # Set your time zone.
   time.timeZone = "Europe/Paris";
@@ -133,6 +155,7 @@ hardware.xpadneo.enable = true;
     prismlauncher
     steam
     vesktop
+    linuxPackages_latest.xpadneo
     # Programmation
     vim
     zed-editor
