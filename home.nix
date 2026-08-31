@@ -1,10 +1,9 @@
-{ config, pkgs, serpantinum, ... }:
+{ config, pkgs, inputs, serpantinum, ... }:
 
 {
   imports = [
-    serpantinum.homeManagerModules.default
+    inputs.serpantinum.homeManagerModules.default
   ];
-
   programs.serpantinum = {
     enable = true;
     systemd.enable = true;
@@ -20,7 +19,7 @@
 
       bar = {
         position = "top";
-        style = "islands";
+        style = "modular";
         width = 40;
         workspaceCount = 10;
         modules = {
@@ -43,9 +42,7 @@
       };
     };
   };
-}
 
-{
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "shrek";
@@ -62,32 +59,30 @@
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  home.packages = [
-    # # Adds the 'hello' command to your environment. It prints a friendly
-    # # "Hello, world!" when run.
-    # pkgs.hello
-    wezterm,
-    btop,
-    fastfetch,
-    oh-my-zsh,
-    starship,
-    ani-cli,
-    playerctl,
-    unzip,
-    rmpc,
-    prismlauncher,
-    vesktop,
-    vim,
-    zed-editor,
-    git,
-    python3,
-    kdePackages.dolphin,
-    xwayland-satellite,
-    firefox-bin,
-    obsidian,
-    keepassxc,
-    openvpn,
-    syncthing,
+  home.packages = with pkgs; [
+    vesktop
+    prismlauncher
+    wezterm
+    btop
+    fastfetch
+    oh-my-zsh
+    ani-cli
+    playerctl
+    unzip
+    vim
+    zed-editor
+    git
+    python3
+    kdePackages.dolphin
+    kdePackages.ark
+    xwayland-satellite
+    firefox-bin
+    obsidian
+    keepassxc
+    openvpn
+    syncthing
+    gnumake
+    pulseaudio
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
@@ -137,6 +132,14 @@
     # EDITOR = "emacs";
   };
 
+  # Serpantinum desktop shell for niri — user config + systemd service.
+  # (programs.serpantinum.enable in configuration.nix handles the system
+  # prerequisites; this handles your own settings.)
+
+  programs.starship = {
+    enable = true;
+    enableZshIntegration = true;
+  };
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 }

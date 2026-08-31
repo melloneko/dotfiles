@@ -12,13 +12,20 @@
 		};
 		spicetify-nix.url = "github:Gerg-L/spicetify-nix";
 	};
-	outputs = inputs@{ self, nixpkgs, serpantinum, ...}: {
+	outputs = inputs@{ self, nixpkgs, serpantinum, home-manager, ...}: {
 		nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
 			system = "x86_64-linux";
 			specialArgs = { inherit inputs; };
 			modules = [
-			./configuration.nix
-			serpantinum.nixosModules.default
+				./configuration.nix
+				serpantinum.nixosModules.default
+				home-manager.nixosModules.default
+				{
+				home-manager.useGlobalPkgs = true;
+				home-manager.useUserPackages = true;
+				home-manager.extraSpecialArgs = { inherit inputs; };
+				home-manager.users."shrek" = import ./home.nix;
+				}
 			];
 	 	};
 	};

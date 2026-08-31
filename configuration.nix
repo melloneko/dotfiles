@@ -11,22 +11,37 @@
       inputs.noctalia-greeter.nixosModules.default
       inputs.spicetify-nix.nixosModules.default
     ];
-  programs.noctalia-greeter = {
-	enable = true;
-  };
+
   programs.steam = {
 	enable = true;
   };
-  programs.niri.enable = true;
+  programs.hyprland = {
+    enable = true;
+    withUWSM = true; # recommended for most users
+    xwayland.enable = true; # Xwayland can be disabled.
+  };
   programs.kdeconnect.enable = true;
   programs.zsh.enable = true;
-  programs.serpantinum.enable = true;
+  programs.serpantinum = {
+    enable = true;
+  };
 
  # services.displayManager.gdm.enable = true;
  # services.displayManager.gdm.wayland = true;
   services.udisks2.enable = true;
   services.gvfs.enable = true;
   services.blueman.enable = true;
+  services.displayManager.sddm = {
+    enable = true;
+
+    wayland = {
+      enable = true;
+
+      # default compositor is "weston", you can optionally change it to kwin
+      #compositor = "kwin";
+      };
+    };
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -133,10 +148,9 @@ hardware.xpadneo.enable = true;
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     # Greeter
-    greetd
-    noctalia-greeter
+
     # Window Manager
-    niri
+    hyprland
 
     # Music
     mpv
@@ -146,6 +160,8 @@ hardware.xpadneo.enable = true;
 
     steam
     # Programmation
+    starship
+    nwg-look
     # Utilities
     kdePackages.kdeconnect-kde
     home-manager
@@ -170,6 +186,7 @@ services.power-profiles-daemon.enable = true;
 services.upower.enable = true;
 system.autoUpgrade.enable  = true;
 system.autoUpgrade.allowReboot  = true;
+services.pipewire.enable = true;
 services.mpd = {
   enable = true;
   settings = {
@@ -207,7 +224,10 @@ services.openssh = {
 };
 xdg.portal = {
   enable = true;
-  extraPortals = pkgs.lib.mkForce [ pkgs.xdg-desktop-portal-gtk ];
+  extraPortals = with pkgs; [
+    xdg-desktop-portal-gtk
+    xdg-desktop-portal-hyprland
+  ];
 };
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];

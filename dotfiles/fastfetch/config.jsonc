@@ -1,48 +1,58 @@
 {
-  "$schema": "https://raw.githubusercontent.com/fastfetch-cli/fastfetch/2.66.0/doc/json_schema.json",
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json",
   "logo": {
-    "type": "builtin",
-    "padding": {
-      "top": 2,
-      "left": 2
+    "type": "small",
+    "color": {
+      "1": "#f5b2e1",
+      "2": "#f5b9a3",
+      "3": "#dcbed0"
     },
-    "source": "nixos_old"
+    "padding": {
+      "top": 1,
+      "left": 2,
+      "right": 3
+    }
   },
   "display": {
-    "separator": "  ->  ",
+    "separator": "  ",
     "color": {
-      "keys": "blue",
-      "title": "blue"
+      "separator": "#ecdfe5"
     }
   },
   "modules": [
-    "title",
-    "separator",
-    "os",
-    "host",
-    "kernel",
-    "separator",
-    "shell",
-    "de",
-    "wm",
-    "wmtheme",
-    "theme",
-    "uptime",
-    "separator",
-    "memory",
-    "swap",
-    "disk",
-    "packages",
-    "cpu",
-    "gpu",
-    "display",
-    "icons",
-    "font",
-    "cursor",
-    "terminal",
-    "terminalfont",
-    "battery",
-    "poweradapter",
-    "colors"
+    "break",
+    {
+      "type": "title",
+      "format": "{1}",
+      "color": {
+        "user": "#f5b2e1"
+      }
+    },
+    "break",
+    {
+      "type": "os",
+      "key": "󱄅 os ",
+      "keyColor": "#f5b2e1"
+    },
+    {
+      "type": "cpu",
+      "key": " cpu",
+      "keyColor": "#f5b9a3"
+    },
+    {
+      "type": "memory",
+      "key": "󰘚 ram",
+      "keyColor": "#dcbed0"
+    },
+    {
+      "type": "shell",
+      "key": " sh ",
+      "keyColor": "#824c75"
+    },
+    "break",
+    {
+      "type": "colors",
+      "symbol": "circle"
+    }
   ]
 }
