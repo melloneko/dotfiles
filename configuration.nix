@@ -20,11 +20,13 @@
   programs.niri.enable = true;
   programs.kdeconnect.enable = true;
   programs.zsh.enable = true;
+  programs.serpantinum.enable = true;
 
  # services.displayManager.gdm.enable = true;
  # services.displayManager.gdm.wayland = true;
   services.udisks2.enable = true;
   services.gvfs.enable = true;
+  services.blueman.enable = true;
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -46,21 +48,21 @@
     settings = {
       General = {
         ControllerMode = "dual";
+        JustWorksRepairing = "always";
+        Class = "0x000100";
         FastConnectable = true;
-        JustWorksRepairing = "confirm";
       };
-      LE = {
-        MinConnectionInterval = 7;
-        MaxConnectionInterval = 9;
-        ConnectionLatency = 0;
-      };
+     # LE = {
+       # MinConnectionInterval = 7;
+       # MaxConnectionInterval = 9;
+       # ConnectionLatency = 0;
+     # };
       Policy = {
         AutoEnable = true;
       };
     };
   };
   boot = {
-      extraModulePackages = with config.boot.kernelPackages; [ xpadneo ];
       extraModprobeConfig = ''
       options bluetooth disable_ertm=Y
     '';
@@ -155,7 +157,6 @@ hardware.xpadneo.enable = true;
     prismlauncher
     steam
     vesktop
-    linuxPackages_latest.xpadneo
     # Programmation
     vim
     zed-editor
@@ -170,6 +171,7 @@ hardware.xpadneo.enable = true;
     keepassxc
     openvpn
     syncthing
+    home-manager
    # wget
   ];
 fonts.packages = with pkgs; [
