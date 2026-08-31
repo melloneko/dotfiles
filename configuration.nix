@@ -132,45 +132,22 @@ hardware.xpadneo.enable = true;
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    # Terminal Tools :
-    wezterm
-    btop
-    fastfetch
-    zsh
-    oh-my-zsh
-    starship
-    ani-cli
-    playerctl
-    unzip
     # Greeter
     greetd
     noctalia-greeter
     # Window Manager
     niri
-    noctalia
-    inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
+
     # Music
     mpv
     mpd
     rmpc
     # Gaming
-    prismlauncher
+
     steam
-    vesktop
     # Programmation
-    vim
-    zed-editor
-    git
-    python3
     # Utilities
     kdePackages.kdeconnect-kde
-    kdePackages.dolphin
-    xwayland-satellite
-    firefox-bin
-    obsidian
-    keepassxc
-    openvpn
-    syncthing
     home-manager
    # wget
   ];
