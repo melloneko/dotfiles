@@ -11,14 +11,19 @@
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 		spicetify-nix.url = "github:Gerg-L/spicetify-nix";
+		qylock = {
+			url = "github:Darkkal44/qylock";
+			inputs.nixpkgs.follows = "nixpkgs";
+		};
 	};
-	outputs = inputs@{ self, nixpkgs, serpantinum, home-manager, ...}: {
+	outputs = inputs@{ self, nixpkgs, serpantinum, home-manager, qylock, ...}: {
 		nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
 			system = "x86_64-linux";
 			specialArgs = { inherit inputs; };
 			modules = [
 				./configuration.nix
 				serpantinum.nixosModules.default
+				qylock.nixosModules.default
 				home-manager.nixosModules.default
 				{
 				home-manager.useGlobalPkgs = true;

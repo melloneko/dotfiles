@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, self, inputs, ... }:
+{ config, pkgs, self, inputs, lib, ... }:
 
 {
   imports =
@@ -24,6 +24,12 @@
   programs.zsh.enable = true;
   programs.serpantinum = {
     enable = true;
+  };
+  programs.qylock = {
+    enable = true;
+    theme = "pixel-dusk-city";
+    sddm.enable = true;
+    quickshell.enable = true; # swap for whichever theme you land on
   };
 
  # services.displayManager.gdm.enable = true;
@@ -151,13 +157,13 @@ hardware.xpadneo.enable = true;
 
     # Window Manager
     hyprland
-
+    kdePackages.qtmultimedia
     # Music
     mpv
     mpd
     rmpc
     # Gaming
-
+    quickshell
     steam
     # Programmation
     starship
@@ -172,7 +178,16 @@ fonts.packages = with pkgs; [
 ];
 environment.sessionVariables = {
   NIXOS_OZONE_WL = "1";
+  GST_PLUGIN_SYSTEM_PATH_1_0 = with pkgs.gst_all_1; lib.makeSearchPathOutput "lib" "lib/gstreamer-1.0" [
+    gstreamer
+    gst-plugins-base
+    gst-plugins-good
+    gst-plugins-bad
+    gst-plugins-ugly
+    gst-libav
+  ];
 };
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
