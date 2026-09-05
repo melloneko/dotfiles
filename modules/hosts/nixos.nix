@@ -20,6 +20,7 @@
       config.flake.modules.nixos.services
       config.flake.modules.nixos.packages
       config.flake.modules.nixos.spicetify
+      config.flake.modules.nixos.keyring
 
       inputs.serpantinum.nixosModules.default
       inputs.qylock.nixosModules.default

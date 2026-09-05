@@ -26,7 +26,7 @@
       gnumake
       pulseaudio
       yazi
-      vscodium
+      vscode
     ];
   };
 }
