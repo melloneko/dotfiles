@@ -8,6 +8,7 @@
       config.flake.modules.homeManager.packages
       config.flake.modules.homeManager.serpantinum
       config.flake.modules.homeManager.starship
+      config.flake.modules.homeManager.zsh
     ];
 
     # Home Manager needs a bit of information about you and the paths it

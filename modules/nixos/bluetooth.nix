@@ -18,6 +18,5 @@
     };
 
     hardware.xpadneo.enable = true; # Xbox controller
-    services.blueman.enable = true;
   };
 }
