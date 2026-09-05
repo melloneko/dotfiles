@@ -17,7 +17,7 @@
 			system = "x86_64-linux";
 			specialArgs = { inherit inputs; };
 			modules = [
-				./configuration.nix
+				./nix/configuration.nix
 				serpantinum.nixosModules.default
 				qylock.nixosModules.default
 				home-manager.nixosModules.default
@@ -25,7 +25,7 @@
 				home-manager.useGlobalPkgs = true;
 				home-manager.useUserPackages = true;
 				home-manager.extraSpecialArgs = { inherit inputs; };
-				home-manager.users."shrek" = import ./home.nix;
+				home-manager.users."shrek" = import ./nix/home.nix;
 				}
 			];
 	 	};
