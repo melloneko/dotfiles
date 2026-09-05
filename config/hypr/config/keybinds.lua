@@ -26,19 +26,23 @@ hl.bind(mainMod .." + W", hl.dsp.window.close())
 hl.bind(mainMod .." + SHIFT + F", hl.dsp.window.float({ action = "toggle"}))
 hl.bind(mainMod .." + F", hl.dsp.window.fullscreen())
 
-hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("serpantinum brightness lower"), { locked = true })
-hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("serpantinum brightness raise"), { locked = true })
 
 hl.bind(mainMod .." + SHIFT + S", hl.dsp.exec_cmd("serpantinum screenshot"), { locked = true })
 
 hl.bind("XF86PowerOff", hl.dsp.exec_cmd("serpantinum lock"), { locked = true })
 hl.bind(mainMod .." + L", hl.dsp.exec_cmd("qylock-lock"), { repeating = true, locked = true })
 
-hl.bind(mainMod .." + Alt_L", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
-hl.bind("XF86AudioMicMute", hl.dsp.exec_cmd("serpantinum volume mic-toggle"), { locked = true })
-hl.bind("XF86AudioMute", hl.dsp.exec_cmd("serpantinum volume mute-toggle"), { locked = true })
-hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("serpantinum volume lower"), { repeating = true, locked = true })
-hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("serpantinum volume raise"), { repeating = true, locked = true })
+hl.bind("F1", hl.dsp.exec_cmd("serpantinum volume mute-toggle"), { locked = true })
+hl.bind("F2", hl.dsp.exec_cmd("serpantinum volume lower"), { repeating = true, locked = true })
+hl.bind("F3", hl.dsp.exec_cmd("serpantinum volume raise"), { repeating = true, locked = true })
+hl.bind("F4", hl.dsp.exec_cmd("serpantinum brightness lower"), { locked = true })
+hl.bind("F5", hl.dsp.exec_cmd("serpantinum brightness raise"), { locked = true })
+hl.bind("F6", hl.dsp.exec_cmd("playerctl previous"), {locked = true})
+hl.bind("F7", hl.dsp.exec_cmd("playerctl play-pause"), {locked = false})
+hl.bind("F8", hl.dsp.exec_cmd("playerctl next"), { locked = true })
+hl.bind("F9", hl.dsp.exec_cmd("serpantinum volume mic-toggle"), { locked = true })
+
+
 
 hl.bind(mainMod .." + B", hl.dsp.exec_cmd("firefox"))
 hl.bind(mainMod .." + E", hl.dsp.exec_cmd("dolphin"))
