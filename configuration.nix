@@ -8,7 +8,6 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      inputs.noctalia-greeter.nixosModules.default
       inputs.spicetify-nix.nixosModules.default
     ];
 
@@ -52,6 +51,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelParams = [ "asus_wmi.fnlock_default=1" ];
 
   networking.hostName = "nixos"; # Define your hostname.
   networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -168,6 +168,7 @@ hardware.xpadneo.enable = true;
     # Programmation
     starship
     nwg-look
+    temurin-bin-25
     # Utilities
     kdePackages.kdeconnect-kde
     home-manager
