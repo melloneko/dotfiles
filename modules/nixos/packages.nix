@@ -30,6 +30,8 @@
 
     fonts.packages = with pkgs; [
       nerd-fonts.fira-code
+      monaspace
+      nerd-fonts.jetbrains-mono
     ];
 
     environment.sessionVariables = {
