@@ -32,6 +32,11 @@
       gcc
       tree-sitter
       lazygit
+      dotnet-sdk
+      wget
+      nodejs
+      ruby
+      go
     ];
   };
 }
