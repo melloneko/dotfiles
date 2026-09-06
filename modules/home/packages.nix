@@ -37,6 +37,7 @@
       ruby
       go
       concord-tui
+      opencode
     ];
   };
 }
