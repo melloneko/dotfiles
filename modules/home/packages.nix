@@ -41,6 +41,7 @@
       opencode
       cava
       tmux
+      television
     ];
   };
 }

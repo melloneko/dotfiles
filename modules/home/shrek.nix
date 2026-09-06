@@ -9,6 +9,7 @@
       config.flake.modules.homeManager.serpantinum
       config.flake.modules.homeManager.starship
       config.flake.modules.homeManager.zsh
+      config.flake.modules.homeManager.nix-search-tv
     ];
 
     # Home Manager needs a bit of information about you and the paths it
