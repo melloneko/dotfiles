@@ -12,6 +12,7 @@
       playerctl
       unzip
       vim
+      neovim
       zed-editor
       git
       python3
@@ -38,6 +39,7 @@
       go
       concord-tui
       opencode
+      cava
     ];
   };
 }
