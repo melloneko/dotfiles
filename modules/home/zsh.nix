@@ -9,7 +9,7 @@
       shellAliases = {
         update = "nix flake update";
         rebuild = "sudo nixos-rebuild switch --flake ~/nixos-config#nixos";
-        clean = "nix-collect-garbage -d && sudo nixos-rebuild boot --flake";
+        clean = "nix-collect-garbage -d && sudo nixos-rebuild boot --flake ~/nixos-config#nixos";
         opti = "nix store optimise";
       };
       history = {
