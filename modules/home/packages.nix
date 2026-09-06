@@ -27,6 +27,11 @@
       pulseaudio
       yazi
       vscode
+      ripgrep
+      fd
+      gcc
+      tree-sitter
+      lazygit
     ];
   };
 }
