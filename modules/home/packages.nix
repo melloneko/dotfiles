@@ -15,7 +15,6 @@
       zed-editor
       git
       python3
-      kdePackages.dolphin
       kdePackages.ark
       xwayland-satellite
       firefox-bin
@@ -37,6 +36,7 @@
       nodejs
       ruby
       go
+      concord-tui
     ];
   };
 }
