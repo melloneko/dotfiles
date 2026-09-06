@@ -37,6 +37,7 @@
       nodejs
       ruby
       go
+      ghcup
     ];
   };
 }
