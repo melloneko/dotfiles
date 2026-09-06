@@ -40,6 +40,7 @@
       concord-tui
       opencode
       cava
+      tmux
     ];
   };
 }
