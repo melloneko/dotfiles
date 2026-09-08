@@ -6,7 +6,7 @@
     boot.loader.grub = {
       enable = true; 
       efiSupport = true; 
-      device = nodev;  
+      device = "nodev";  
     };
     boot.kernelPackages = pkgs.linuxPackages_latest;
     boot.kernelParams = [ "asus_wmi.fnlock_default=1" ];
