@@ -1,8 +1,13 @@
 { ... }:
 {
   flake.modules.nixos.boot = { pkgs, ... }: {
-    boot.loader.systemd-boot.enable = true;
+    boot.loader.systemd-boot.enable = false;
     boot.loader.efi.canTouchEfiVariables = true;
+    boot.loader.grub = {
+      enable = true; 
+      efiSupport = true; 
+      device = nodev;  
+    };
     boot.kernelPackages = pkgs.linuxPackages_latest;
     boot.kernelParams = [ "asus_wmi.fnlock_default=1" ];
     boot.extraModprobeConfig = ''

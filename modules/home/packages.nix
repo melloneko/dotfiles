@@ -42,6 +42,7 @@
       cava
       tmux
       television
+      pdfmm
     ];
   };
 }
