@@ -43,6 +43,7 @@
       tmux
       television
       pdfmm
+      nautilus
     ];
   };
 }

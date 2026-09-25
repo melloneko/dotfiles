@@ -5,14 +5,14 @@
     };
     flake-parts = {
       url = "github:hercules-ci/flake-parts";
-    }; 
-    import-tree = {  
+    };
+    import-tree = {
       url = "github:vic/import-tree";
-    }; 
+    };
     serpantinum = {
       url = "github:ilyamiro/serpantinum";
     };
-    spicetify-nix = { 
+    spicetify-nix = {
       url = "github:Gerg-L/spicetify-nix";
     };
     qylock = {
@@ -21,10 +21,6 @@
     };
     home-manager = {
       url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    nix-search-tv = {
-      url = "github:3timeslazy/nix-search-tv";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
