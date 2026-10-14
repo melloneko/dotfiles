@@ -32,15 +32,15 @@ hl.bind(mainMod .." + SHIFT + S", hl.dsp.exec_cmd("serpantinum screenshot"), { l
 hl.bind("XF86PowerOff", hl.dsp.exec_cmd("serpantinum lock"), { locked = true })
 hl.bind(mainMod .." + L", hl.dsp.exec_cmd("qylock-lock"), { repeating = true, locked = true })
 
-hl.bind("F1", hl.dsp.exec_cmd("serpantinum volume mute-toggle"), { locked = true })
-hl.bind("F2", hl.dsp.exec_cmd("serpantinum volume lower"), { repeating = true, locked = true })
-hl.bind("F3", hl.dsp.exec_cmd("serpantinum volume raise"), { repeating = true, locked = true })
-hl.bind("F4", hl.dsp.exec_cmd("serpantinum brightness lower"), { locked = true })
-hl.bind("F5", hl.dsp.exec_cmd("serpantinum brightness raise"), { locked = true })
-hl.bind("F6", hl.dsp.exec_cmd("playerctl previous"), {locked = true})
-hl.bind("F7", hl.dsp.exec_cmd("playerctl play-pause"), {locked = false})
-hl.bind("F8", hl.dsp.exec_cmd("playerctl next"), { locked = true })
-hl.bind("F9", hl.dsp.exec_cmd("serpantinum volume mic-toggle"), { locked = true })
+hl.bind("XF86AudioMute", hl.dsp.exec_cmd("serpantinum volume mute-toggle"), { locked = true })
+hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("serpantinum volume lower"), { repeating = true, locked = true })
+hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("serpantinum volume raise"), { repeating = true, locked = true })
+hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("serpantinum brightness lower"), { locked = true })
+hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("serpantinum brightness raise"), { locked = true })
+hl.bind("XF86TouchpadToggle", hl.dsp.exec_cmd("playerctl --ignore-player=kdeconnect previous"), {locked = true})
+hl.bind("F7", hl.dsp.exec_cmd("playerctl --ignore-player=kdeconnect play-pause"), {locked = true})
+hl.bind("F8", hl.dsp.exec_cmd("playerctl --ignore-player=kdeconnect next"), { locked = false })
+hl.bind("XF86AudioMicMute", hl.dsp.exec_cmd("serpantinum volume mic-toggle"), { locked = true })
 
 
 
@@ -50,7 +50,7 @@ hl.bind(mainMod .." + RETURN", hl.dsp.exec_cmd(terminal))
 
 hl.bind(mainMod .." + R", hl.dsp.exec_cmd("serpantinum reload"))
 hl.bind(mainMod .." + C", hl.dsp.exec_cmd("serpantinum msg toggle clipboard"))
-hl.bind(mainMod .." + SPACE", hl.dsp.exec_cmd("serpantinum msg toggle launcher"))
+hl.bind(mainMod .."+ Space", hl.dsp.exec_cmd("serpantinum msg toggle launcher"))
 hl.bind(mainMod .." + Q", hl.dsp.exec_cmd("serpantinum msg toggle music"))
 hl.bind(mainMod .." + G", hl.dsp.exec_cmd("serpantinum msg toggle system"))
 hl.bind(mainMod .." + CTRL", hl.dsp.exec_cmd("serpantinum msg toggle wallpaper"))

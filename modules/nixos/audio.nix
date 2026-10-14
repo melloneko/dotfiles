@@ -2,19 +2,21 @@
 {
   flake.modules.nixos.audio = {
     services.pipewire.enable = true;
-
+    systemd.services.mpd.environment = {
+      XDG_RUNTIME_DIR = "/run/user/1000";
+    };
     services.mpd = {
       enable = true;
       settings = {
+        port = 6600;
+        auto_update = "yes";
         music_directory = "/home/shrek/Music";
         audio_output = [
           {
-            type = "alsa";
+            type = "pipewire";
             name = "Output";
             format = "44100:16:2";
-            mixer_type = "hardware";
-            mixer_device = "default";
-            mixer_control = "PCM";
+            mixer_type = "software";
           }
           {
             type = "fifo";

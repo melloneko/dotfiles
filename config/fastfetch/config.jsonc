@@ -3,9 +3,9 @@
   "logo": {
     "type": "small",
     "color": {
-      "1": "#e87a5d",
-      "2": "#e87a5d",
-      "3": "#f9e2af"
+      "1": "#00f0ff",
+      "2": "#ffb800",
+      "3": "#00ff66"
     },
     "padding": {
       "top": 1,
@@ -16,7 +16,7 @@
   "display": {
     "separator": "  ",
     "color": {
-      "separator": "#fcece8"
+      "separator": "#00f0ff"
     }
   },
   "modules": [
@@ -25,29 +25,29 @@
       "type": "title",
       "format": "{1}",
       "color": {
-        "user": "#e87a5d"
+        "user": "#00f0ff"
       }
     },
     "break",
     {
       "type": "os",
       "key": "󱄅 os ",
-      "keyColor": "#e87a5d"
+      "keyColor": "#00f0ff"
     },
     {
       "type": "cpu",
       "key": " cpu",
-      "keyColor": "#e87a5d"
+      "keyColor": "#ffb800"
     },
     {
       "type": "memory",
       "key": "󰘚 ram",
-      "keyColor": "#f9e2af"
+      "keyColor": "#00ff66"
     },
     {
       "type": "shell",
       "key": " sh ",
-      "keyColor": "#eba0ac"
+      "keyColor": "#e600ff"
     },
     "break",
     {

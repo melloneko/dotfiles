@@ -14,6 +14,7 @@
       # Music
       mpv
       mpd
+      mpc
       rmpc
       # Gaming
       quickshell

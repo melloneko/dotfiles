@@ -44,6 +44,7 @@
       television
       pdfmm
       nautilus
+      libreoffice
     ];
   };
 }

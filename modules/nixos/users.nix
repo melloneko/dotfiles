@@ -9,5 +9,8 @@
     };
     users.defaultUserShell = pkgs.zsh;
     programs.zsh.enable = true;
+    system.activationScripts.fixHomePerms = ''
+      chmod 711 /home/shrek
+    '';
   };
 }
