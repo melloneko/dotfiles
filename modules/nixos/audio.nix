@@ -7,6 +7,8 @@
     };
     services.mpd = {
       enable = true;
+      user = "shrek";
+      group = "users";
       settings = {
         port = 6600;
         auto_update = "yes";

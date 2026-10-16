@@ -1,6 +1,6 @@
 { ... }:
 {
-  flake.modules.nixos.services = {
+  flake.modules.nixos.services = { pkgs, ... }: {
     services.upower.enable = true;
     services.power-profiles-daemon.enable = true;
 
@@ -15,7 +15,9 @@
     # };
     services.printing = {
       enable = true;
+      drivers = [ pkgs.epson-escpr ];
     };
+
     services.avahi = {
       enable = true;
       nssmdns4 = true;

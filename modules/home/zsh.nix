@@ -7,8 +7,8 @@
       autocd = true;
       defaultKeymap = "viins"; # bindkey -v (vi mode, insert as default)
       shellAliases = {
-        update = "nix flake update /home/shrek/nixos-config#nixos";
-        rebuild = "sudo nixos-rebuild switch --flake /home/shrek/nixos-config#nixos";
+        update = "nix flake update --flake /home/shrek/nixos-config";
+        rebuild = "sudo nixos-rebuild switch --flake /home/shrek/nixos-config";
         clean = "nix-collect-garbage -d && sudo nixos-rebuild boot --flake ~/nixos-config#nixos";
         opti = "nix store optimise";
       };
