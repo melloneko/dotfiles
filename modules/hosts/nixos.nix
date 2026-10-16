@@ -21,6 +21,7 @@
       config.flake.modules.nixos.packages
       config.flake.modules.nixos.spicetify
       config.flake.modules.nixos.keyring
+      config.flake.modules.nixos.craftapps
 
       inputs.serpantinum.nixosModules.default
       inputs.qylock.nixosModules.default
@@ -31,6 +32,7 @@
         home-manager.extraSpecialArgs = { inherit inputs; };
         home-manager.users."shrek" = config.flake.modules.homeManager.shrek;
       }
+      inputs.nix-craftapps.nixosModules.default
     ];
   };
 }

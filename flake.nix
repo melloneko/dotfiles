@@ -23,6 +23,10 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-craftapps = {
+          url = "github:olafkfreund/nix-craftapps";
+          inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   # import-tree recursively imports every .nix file under ./modules as a
