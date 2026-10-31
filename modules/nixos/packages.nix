@@ -1,6 +1,22 @@
 { ... }:
+
 {
-  flake.modules.nixos.packages = { pkgs, lib, ... }: {
+  flake.modules.nixos.packages = { pkgs, lib, ... }:
+  let
+    collection-manager = pkgs.writeShellApplication {
+      name = "collection-manager";
+      runtimeInputs = [ pkgs.wineWowPackages.stable pkgs.winetricks ];
+      text = ''
+        export WINEPREFIX="$HOME/.local/share/collection-manager"
+        export WINEARCH=win64
+        if [ ! -d "$WINEPREFIX/drive_c/windows/Microsoft.NET" ]; then
+          winetricks -q dotnet48
+        fi
+        exec wine "$HOME/Games/CollectionManager/CollectionManager.exe" "$@"
+      '';
+    };
+  in
+  {
     nixpkgs.config.allowUnfree = true;
 
     programs.steam.enable = true;
@@ -11,23 +27,30 @@
       # Window Manager
       hyprland
       kdePackages.qtmultimedia
+
       # Music
       mpv
       mpd
       mpc
       rmpc
+
       # Gaming
       quickshell
       steam
       osu-lazer-bin
+
       # Programmation
       starship
       nwg-look
       temurin-bin-25
+
       # Utilities
       kdePackages.kdeconnect-kde
       home-manager
       # wget
+
+      # osu! tools
+      collection-manager
     ];
 
     fonts.packages = with pkgs; [
