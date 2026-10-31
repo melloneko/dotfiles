@@ -19,6 +19,7 @@
       # Gaming
       quickshell
       steam
+      osu-lazer-bin
       # Programmation
       starship
       nwg-look
