@@ -5,14 +5,15 @@
   let
     collection-manager = pkgs.writeShellApplication {
       name = "collection-manager";
-      runtimeInputs = [ pkgs.wineWowPackages.stable pkgs.winetricks ];
+      runtimeInputs = [ pkgs.wineWow64Packages.stable pkgs.winetricks ];
       text = ''
         export WINEPREFIX="$HOME/.local/share/collection-manager"
         export WINEARCH=win64
         if [ ! -d "$WINEPREFIX/drive_c/windows/Microsoft.NET" ]; then
           winetricks -q dotnet48
         fi
-        exec wine "$HOME/Games/CollectionManager/CollectionManager.exe" "$@"
+        exec wine "$HOME/Games/CollectionManager/CollectionManager.App.WinForms.exe" "$@"
+
       '';
     };
   in
