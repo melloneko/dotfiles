@@ -1,0 +1,22 @@
+{
+  "font": {
+    "normal": {
+      "family": "Fira Code"
+    }
+  },
+  "theme": {
+    "dark": {
+      "name": "matugen",
+      "icon_theme": "auto"
+    },
+    "light": {
+      "name": "matugen",
+      "icon_theme": "auto"
+    }
+  },
+  "launcher_window": {
+    "rounding": 0,
+    "material": "none",
+    "opacity": 1.0
+  }
+}

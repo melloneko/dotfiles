@@ -7,6 +7,8 @@
     imports = [
       config.flake.modules.homeManager.packages
       config.flake.modules.homeManager.serpantinum
+      config.flake.modules.homeManager.vicinae
+      config.flake.modules.homeManager.omarchy-theme
       config.flake.modules.homeManager.starship
       config.flake.modules.homeManager.zsh
     ];

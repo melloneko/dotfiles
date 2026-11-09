@@ -36,7 +36,8 @@
 
         theme = {
           fontFamily = "Adwaita Mono";
-          borderRadius = 12;
+          borderRadius = 10;
+          activePreset = "Matugen";
           matugen = true;
         };
 
