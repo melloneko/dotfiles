@@ -12,6 +12,7 @@
 
       config.flake.modules.nixos.boot
       config.flake.modules.nixos.locale
+      config.flake.modules.nixos.chinese-input
       config.flake.modules.nixos.networking
       config.flake.modules.nixos.bluetooth
       config.flake.modules.nixos.users
