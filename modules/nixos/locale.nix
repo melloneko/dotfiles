@@ -17,7 +17,7 @@
     };
 
     services.xserver.xkb = {
-      layout = "fr";
+      layout = "fr,cn";
       variant = "";
     };
     console.keyMap = "fr";

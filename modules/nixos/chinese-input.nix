@@ -8,7 +8,7 @@
         # Use the GTK/Qt IM modules instead of the Wayland text-input
         # frontend: this is the most reliable setup for LibreOffice,
         # Electron/Chromium and XWayland apps.
-        waylandFrontend = false;
+        waylandFrontend = true;
         addons = with pkgs.qt6Packages; [
           fcitx5-chinese-addons
         ];
@@ -29,15 +29,8 @@
         "Default Layout" = "fr";
         DefaultIM = "pinyin";
       };
-      "Groups/0/Items/0" = {
-        Name = "pinyin";
-        Layout = "";
-      };
+      "Groups/0/Items/0".Name = "keyboard-fr";
+      "Groups/0/Items/1".Name = "pinyin";
     };
-
-    fonts.packages = with pkgs; [
-      noto-fonts-cjk-sans
-      noto-fonts-cjk-serif
-    ];
   };
 }

@@ -19,6 +19,14 @@
   in
   {
     nixpkgs.config.allowUnfree = true;
+    nixpkgs.overlays = [
+         (final: prev: {
+           modrinth-app-unwrapped = prev.modrinth-app-unwrapped.overrideAttrs (old: {
+             buildInputs = (old.buildInputs or [ ]) ++ [ final.sqlite ];
+             nativeBuildInputs = (old.nativeBuildInputs or [ ]) ++ [ final.pkg-config ];
+           });
+         })
+       ];
 
     programs.steam.enable = true;
 
@@ -39,7 +47,7 @@
       quickshell
       steam
       osu-lazer-bin
-
+      modrinth-app
       # Programmation
       starship
       nwg-look
@@ -58,6 +66,8 @@
       nerd-fonts.fira-code
       monaspace
       nerd-fonts.jetbrains-mono
+      noto-fonts-cjk-sans
+      noto-fonts-cjk-serif
     ];
 
     environment.sessionVariables = {
