@@ -23,6 +23,8 @@
       config.flake.modules.nixos.spicetify
       config.flake.modules.nixos.keyring
       config.flake.modules.nixos.craftapps
+      config.flake.modules.nixos.openrazer
+      config.flake.modules.nixos.input-remapper
 
       inputs.serpantinum.nixosModules.default
       inputs.qylock.nixosModules.default
