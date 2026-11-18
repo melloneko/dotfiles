@@ -11,6 +11,7 @@
       config.flake.modules.homeManager.omarchy-theme
       config.flake.modules.homeManager.starship
       config.flake.modules.homeManager.zsh
+      config.flake.modules.homeManager.input-remapper
     ];
 
     # Home Manager needs a bit of information about you and the paths it

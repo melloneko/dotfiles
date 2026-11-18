@@ -29,7 +29,7 @@ hl.bind(mainMod .." + F", hl.dsp.window.fullscreen())
 
 hl.bind(mainMod .." + SHIFT + S", hl.dsp.exec_cmd("serpantinum screenshot"), { locked = true })
 
-hl.bind("XF86PowerOff", hl.dsp.exec_cmd("serpantinum lock"), { locked = true })
+-- hl.bind("XF86PowerOff", hl.dsp.exec_cmd("serpantinum lock"), { locked = true })
 hl.bind(mainMod .." + L", hl.dsp.exec_cmd("qylock-lock"), { repeating = true, locked = true })
 
 hl.bind("XF86AudioMute", hl.dsp.exec_cmd("serpantinum volume mute-toggle"), { locked = true })
@@ -37,9 +37,9 @@ hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("serpantinum volume lower"), { r
 hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("serpantinum volume raise"), { repeating = true, locked = true })
 hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("serpantinum brightness lower"), { locked = true })
 hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("serpantinum brightness raise"), { locked = true })
-hl.bind("XF86TouchpadToggle", hl.dsp.exec_cmd("playerctl --ignore-player=kdeconnect previous"), {locked = true})
-hl.bind("F7", hl.dsp.exec_cmd("playerctl --ignore-player=kdeconnect play-pause"), {locked = true})
-hl.bind("F8", hl.dsp.exec_cmd("playerctl --ignore-player=kdeconnect next"), { locked = false })
+hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl --ignore-player=kdeconnect previous"), {locked = true})
+hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl --ignore-player=kdeconnect play-pause"), {locked = true})
+hl.bind("XF86AudioNext", hl.dsp.exec_cmd("playerctl --ignore-player=kdeconnect next"), { locked = false })
 hl.bind("XF86AudioMicMute", hl.dsp.exec_cmd("serpantinum volume mic-toggle"), { locked = true })
 
 
